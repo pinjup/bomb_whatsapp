@@ -15,7 +15,7 @@ while True:
 class spam_whatsapp(unittest.TestCase):
 
     def setUp(self):
-        self.driver = webdriver.Chrome(executable_path = '/Users/pinjup_/Documents/spam_whatsapp/chromedriver') # <----------- Configure executable path
+        self.driver = webdriver.Chrome(executable_path = './chromedriver') # <----------- Configure executable path
         driver = self.driver
         driver.implicitly_wait(30)
         driver.maximize_window()
@@ -30,7 +30,7 @@ class spam_whatsapp(unittest.TestCase):
         n = 0
         while n < count:
             n+=1
-            print(f"Se han enviado {n} mensajes")
+            print(f"{n} messages have been sent")
             p_ = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div').send_keys(message)
             sleep(0.2)
             p_ = driver.find_element(By.XPATH, '/html/body/div[1]/div/div/div[4]/div/footer/div[1]/div/span[2]/div/div[2]/div[2]/button')
